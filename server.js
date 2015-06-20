@@ -37,7 +37,7 @@ app.get('/api/moods', function(req, res) {
 	console.log("server got a moody request");
 
 	Mood
-	.find()
+	.find({ "feel": 1 })
 	.exec().then(function(data) {
 		return res.json(data)
 	});

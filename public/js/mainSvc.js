@@ -26,6 +26,7 @@ app.service('mainSvc', function($http, $q) {
 		.then(function(res) {
 			dfd.resolve(res.data);
 		});
+		console.log(data);
 		return dfd.promise;
 	};
 

@@ -45,6 +45,12 @@
 		</div>
 
 		<h2>See how you do</h2>
+		<br>
+		<button ng-click="loadMoos()">Your Moodiness</button>
+
+		<div ng-repeat="moo in moos">
+			{{ moo }}
+		</div>
 		
  	</div>
  

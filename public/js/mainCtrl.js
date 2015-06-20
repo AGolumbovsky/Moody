@@ -43,7 +43,6 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 		$scope.moos = mainSvc.getMoods();
 		console.log($scope.moos);
 
-		mainSvc.getMoods();
 	}
 
 

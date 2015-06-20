@@ -16,16 +16,26 @@ mongoose.connect('mongodb://localhost/moody');
 var db = mongoose.connection;
 
 
-//endpoints
-app.post('moods', function(req, res) {
+// ### endpoints ###
+//post your mood
+app.post('api/moods', function(req, res) {
 	var mood = new Mood(req.body);
 	mood.save(function(err, moo) {
 		if (err) {
 			console.log("something's wrong, you should be sad");
 		}
 		res.json(moo);
-	})
+	});
+});
+
+//get your moods
+app.get('api/moods', function(req, res) {
+	console.log("server got a moody request");
+
+
 })
+
+
 
 
 //listen on port

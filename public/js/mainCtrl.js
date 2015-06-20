@@ -1,6 +1,7 @@
 var app = angular.module('moody');
 
 app.controller('mainCtrl', function($scope, mainSvc) {
+	$scope.moos = [];
 
 	// click on happy face. post to db
 	$scope.happyMoo = function() {
@@ -39,8 +40,8 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 
 		console.log("moo stats");
 
-		$scope.moos = data;
-		console.log(data);
+		$scope.moos = mainSvc.getMoods();
+		console.log($scope.moos);
 
 		mainSvc.getMoods();
 	}

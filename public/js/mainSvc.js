@@ -17,6 +17,9 @@ app.service('mainSvc', function($http, $q) {
 	};
 
 	this.getMoods = function() {
+
+		console.log("getMoods from Svc says hello");
+
 		var dfd = $q.defer();
 
 		$http({
@@ -26,9 +29,11 @@ app.service('mainSvc', function($http, $q) {
 		.then(function(res) {
 			dfd.resolve(res.data);
 		});
-		console.log(data);
+
+		console.log("getMoods done");
 		return dfd.promise;
 	};
+
 
 
 

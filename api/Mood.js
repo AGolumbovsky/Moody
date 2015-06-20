@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 
 var moodSchema = new Schema({
 
+	feel: Number,
 	hour: Number,
 	weekday: String
 });

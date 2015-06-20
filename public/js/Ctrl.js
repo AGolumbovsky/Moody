@@ -2,11 +2,17 @@ var app = angular.module('moody');
 
 app.controller('ctrl', ['svc', function($scope, svc) {
 
-	$scope.moo = [];
+	$scope.happyMoo = function() {
+		console.log("Happy Moo :-) ");
+		alert("Happy Moo! :-)");
+	};
 
-	console.log($scope.moods);
+	$scope.madMoo = function() {
+		console.log("Mad Moo :-| ")
+		alert("Mad Moo! :-|");
+	};
 
-	$scope.postMood = function() {
-		console.log("mood remembered");
-	}
+
+
+
 }]);

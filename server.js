@@ -1,6 +1,9 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var bson = require('bson');
+//require model
+var Mood = require('./api/Mood')
 
 // initialize the app
 var app = express();
@@ -17,12 +20,13 @@ var db = mongoose.connection;
 
 
 // ### endpoints ###
+
 //post your mood
-app.post('api/moods', function(req, res) {
+app.post('/api/moods', function(req, res) {
 	var mood = new Mood(req.body);
 	mood.save(function(err, moo) {
 		if (err) {
-			console.log("something's wrong, you should be sad");
+			console.log("something's wrong, you should be sad", err);
 		}
 		res.json(moo);
 	});

@@ -2,7 +2,8 @@ var app = angular.module('moody');
 
 app.controller('ctrl', ['svc', function($scope, svc) {
 
-	$scope.moods = [];
+	$scope.moo = [];
+
 	console.log($scope.moods);
 
 	$scope.postMood = function() {

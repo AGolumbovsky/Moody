@@ -33,11 +33,16 @@ app.post('/api/moods', function(req, res) {
 });
 
 //get your moods
-app.get('api/moods', function(req, res) {
+app.get('/api/moods', function(req, res) {
 	console.log("server got a moody request");
 
-
-})
+	Mood
+	.find()
+	.exec().then(function(data) {
+		return res.json(data)
+	});
+	
+});
 
 
 

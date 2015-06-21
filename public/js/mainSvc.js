@@ -31,7 +31,7 @@ app.service('mainSvc', function($http, $q) {
 		});
 
 		console.log("getMoods done");
-		return dfd.promise;
+		return dfd.promise; // returns object but cannot display
 	};
 
 

@@ -34,7 +34,7 @@ app.service('mainSvc', function($http, $q) {
 		return dfd.promise; // returns object but cannot display
 	};
 	// try to mess with:
-	
+
 	/*
 	function asyncGreet(name) {
   // perform some asynchronous operation, resolve or reject the promise when appropriate.
@@ -48,6 +48,7 @@ app.service('mainSvc', function($http, $q) {
     }, 1000);
   });
 }
+
 
 */
 

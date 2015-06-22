@@ -33,6 +33,24 @@ app.service('mainSvc', function($http, $q) {
 		console.log("getMoods done");
 		return dfd.promise; // returns object but cannot display
 	};
+	// try to mess with:
+	
+	/*
+	function asyncGreet(name) {
+  // perform some asynchronous operation, resolve or reject the promise when appropriate.
+  return $q(function(resolve, reject) {
+    setTimeout(function() {
+      if (okToGreet(name)) {
+        resolve('Hello, ' + name + '!');
+      } else {
+        reject('Greeting ' + name + ' is not allowed.');
+      }
+    }, 1000);
+  });
+}
+
+*/
+
 
 
 

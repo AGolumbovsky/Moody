@@ -3,6 +3,8 @@ var app = angular.module('moody');
 app.service('mainSvc', function($http, $q) {
 
 	this.postMood = function(moo) {
+
+		console.log("I know how you feel")
 		var dfd = $q.defer();
 
 		$http({

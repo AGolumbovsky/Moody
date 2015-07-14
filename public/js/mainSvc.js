@@ -4,7 +4,7 @@ app.service('mainSvc', function($http, $q) {
 
 	this.postMood = function(moo) {
 
-		console.log("I know how you feel")
+		console.log("postMood is at your service")
 		var dfd = $q.defer();
 
 		$http({
@@ -20,7 +20,7 @@ app.service('mainSvc', function($http, $q) {
 
 	this.getMoods = function() {
 
-		console.log("getMoods from Svc says hello");
+		console.log("getMoods is at your service");
 
 		var dfd = $q.defer();
 

@@ -15,6 +15,7 @@ app.service('mainSvc', function($http, $q) {
 		.then(function(res) {
 			dfd.resolve(res.data);
 		});
+		console.log("postMood did it")
 		return dfd.promise;
 	};
 
@@ -32,7 +33,7 @@ app.service('mainSvc', function($http, $q) {
 			dfd.resolve(res.data);
 		});
 
-		console.log("getMoods done");
+		console.log("getMoods did it");
 		return dfd.promise; // returns object but cannot display
 	};
 	// try to mess with:

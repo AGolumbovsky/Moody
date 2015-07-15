@@ -2,13 +2,14 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var bson = require('bson');
-//require model
+//require mongoose model
 var Mood = require('./api/Mood')
 
 // initialize the app
 var app = express();
 
-//middleware
+// middleware
+// serve static files
 app.use(express.static(__dirname + '/public'));
 //parse json
 app.use(bodyParser.json());
@@ -36,6 +37,8 @@ app.post('/api/moods', function(req, res) {
 app.get('/api/moods', function(req, res) {
 	console.log("server got a moody request");
 
+	// !!!! in test right now !!!
+	// !!! will have logic to present analytics in the view
 	Mood
 	.find({ "feel": 1 })
 	.exec().then(function(data) {
@@ -45,9 +48,7 @@ app.get('/api/moods', function(req, res) {
 });
 
 
-
-
 //listen on port
 app.listen(port, function() {
-	console.log('being all moody on port', port);
+	console.log('being all moody on port ', port);
 });

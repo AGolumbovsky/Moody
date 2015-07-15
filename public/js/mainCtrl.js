@@ -38,7 +38,7 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 	// load stats from db (unrefined for now) 
 	$scope.loadMoos = function() {
 
-		console.log("moo stats");
+		console.log("moo starts");
 
 		$scope.moos = mainSvc.getMoods();
 		console.log($scope.moos);

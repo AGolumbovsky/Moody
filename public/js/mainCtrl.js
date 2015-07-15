@@ -36,14 +36,15 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 	};
 
 	// load stats from db (unrefined for now) 
-	$scope.loadMoos = function() {
+
+	($scope.loadMoos = function() {
 
 		console.log("moo starts");
 
 		$scope.moos = mainSvc.getMoods();
 		console.log($scope.moos);
 
-	}
+	})(); // added IIFE. It's working but not helping much
 
 
 

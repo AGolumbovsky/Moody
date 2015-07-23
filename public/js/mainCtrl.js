@@ -1,7 +1,8 @@
 var app = angular.module('moody');
 
 app.controller('mainCtrl', function($scope, mainSvc) {
-	$scope.moos = { fieldOne: "Uno", fieldTwo: "Dos"}; // erase, dont' forget
+	
+	$scope.moos = {}; 
 
 	// click on happy face. post to db
 	$scope.happyMoo = function() {

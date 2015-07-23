@@ -41,6 +41,7 @@ app.get('/api/moods', function(req, res) {
 	// !!! will have logic to present analytics in the view
 	Mood
 	.find({ "feel": 1 })
+	// ok, this is not clear...
 	.exec().then(function(data) {
 		return res.json(data)
 	});

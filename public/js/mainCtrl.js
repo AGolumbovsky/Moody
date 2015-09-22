@@ -22,7 +22,7 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 	// click on mad face. post to db
 	$scope.madMoo = function() {
 
-		console.log("Mad Moo :-| ");
+		console.log("MadCowThisIs :-| ");
 
 		$scope.now = new Date();
 		$scope.moo = {

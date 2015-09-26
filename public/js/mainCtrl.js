@@ -16,7 +16,7 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 			weekday: $scope.now.getDay()
 		};
 		mainSvc.postMood($scope.moo);
-		console.log($scope.moo);
+		console.log($scope.moo + "happy. I hope you saw it...");
 	};
 
 	// click on mad face. post to db
@@ -32,7 +32,7 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 		};
 		mainSvc.postMood($scope.moo);
 
-		console.log($scope.moo);
+		console.log($scope.moo + " mad. I hope you saw it...");
 	
 	};
 

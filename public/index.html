@@ -22,7 +22,7 @@
 
 		<div class="jumbotron">
             
-            <h1>Choose your mood, Your Moodiness</h1>
+            <h1>How do you feel, Your Moodiness</h1>
             
         </div>
 
@@ -50,11 +50,13 @@
 
 		<h2>See how you do</h2>
 		<br>
+		<!-- this will do the same as at the startup -->
 		<button ng-click="loadMoos()">Your Moodiness</button>
-
+		<div> {{stuff}} </div>
+		<div> {{moodAnswer}} </div>
 		<div ng-repeat="moo in moos">
 			
-			{{ moo.id }}
+			{{ moo.hour }}
 
 		</div>
         

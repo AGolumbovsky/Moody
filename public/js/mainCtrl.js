@@ -3,7 +3,8 @@ var app = angular.module('moody');
 app.controller('mainCtrl', function($scope, mainSvc) {
 	
 	$scope.moos = {}; 
-
+	$scope.answers = [];
+	$scope.stuff = "stuff!"
 	// click on happy face. post to db
 	$scope.happyMoo = function() {
 
@@ -16,7 +17,7 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 			weekday: $scope.now.getDay()
 		};
 		mainSvc.postMood($scope.moo);
-		console.log($scope.moo + "happy. I hope you saw it...");
+		console.log($scope.moo + " happy. I hope you saw it...");
 	};
 
 	// click on mad face. post to db
@@ -30,7 +31,13 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 			hour: $scope.now.getHours(), 
 			weekday: $scope.now.getDay()
 		};
-		mainSvc.postMood($scope.moo);
+		// look later
+		mainSvc
+			.postMood($scope.moo)
+			.then(function (res) {
+				console.log( "yay we are react to that click after the answer", res);
+				$scope.answers.push(res.data);
+			});
 
 		console.log($scope.moo + " mad. I hope you saw it...");
 	
@@ -42,10 +49,14 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 
 		console.log("moo starts");
 
-		$scope.moos = mainSvc.getMoods();
-		console.log($scope.moos);
+		mainSvc.getMoods()
+		.then(function(data){
+			console.log(data);
+			$scope.moos = data;
+		});
+		
 
-	})(); // added IIFE. It's working but not helping much
+	});
 
 
 

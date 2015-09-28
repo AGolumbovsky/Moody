@@ -6,7 +6,7 @@ app.service('mainSvc', function($http, $q) {
 
 		console.log("postMood is at your main Service")
 		var dfd = $q.defer();
-
+		console.log(moo);
 		$http({
 			method: 'POST', 
 			url: 'api/moods', 
@@ -14,8 +14,10 @@ app.service('mainSvc', function($http, $q) {
 		})
 		.then(function(res) {
 			dfd.resolve(res.data);
+			console.log("postMood did it");
+			console.log(res.data);			
 		});
-		console.log("postMood did it")
+
 		return dfd.promise;
 	};
 

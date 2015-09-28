@@ -3,8 +3,7 @@ var app = angular.module('moody');
 app.controller('mainCtrl', function($scope, mainSvc) {
 	
 	$scope.moos = {}; 
-	$scope.answers = [];
-	$scope.stuff = "stuff!"
+	
 	// click on happy face. post to db
 	$scope.happyMoo = function() {
 
@@ -35,8 +34,7 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 		mainSvc
 			.postMood($scope.moo)
 			.then(function (res) {
-				console.log( "yay we are react to that click after the answer", res);
-				$scope.answers.push(res.data);
+				console.log("wtf")
 			});
 
 		console.log($scope.moo + " mad. I hope you saw it...");
@@ -48,15 +46,18 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 	($scope.loadMoos = function() {
 
 		console.log("moo starts");
-
+		// this is where I had a problem for 2 months of trying to figure it out on my own... sometimes you just have to ask for help. took < 10 min
 		mainSvc.getMoods()
 		.then(function(data){
 			console.log(data);
-			$scope.moos = data;
-		});
+			$scope.moos = data; // put this back if the plan doesn't work
 		
 
-	});
+		});
+
+		
+
+	})(); // added IIFE to load on startup
 
 
 

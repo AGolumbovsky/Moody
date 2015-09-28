@@ -20,9 +20,10 @@
  		<br>
  		<br>
 
-		<div class="jumbotron">
+		<!-- make this pretty -->
+		<div>
             
-            <h1>How do you feel, Your Moodiness</h1>
+            <h4><b>How do you feel, Your Moodiness</b></h4>
             
         </div>
 
@@ -56,7 +57,7 @@
 		<div> {{moodAnswer}} </div>
 		<div ng-repeat="moo in moos">
 			
-			{{ moo.hour }}
+			{{ moo.hour }} and {{ moo.feel }}
 
 		</div>
         

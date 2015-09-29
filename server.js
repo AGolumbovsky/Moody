@@ -24,7 +24,7 @@ var db = mongoose.connection;
 
 //post your mood
 app.post('/api/moods', function(req, res) {
-	console.log("server got a moody POST request") // not sure where it logs
+	console.log("server got a moody POST request") 
 	var mood = new Mood(req.body);
 	mood.save(function(err, moo) {
 		if (err) {
@@ -36,11 +36,12 @@ app.post('/api/moods', function(req, res) {
 
 //get your moods
 app.get('/api/moods', function(req, res) {
-	console.log("server got a moody GET request"); // not sure where it logs
+	console.log("server got a moody GET request"); 
 
 	// !!!! in test right now !!!
 	// !!! will have logic to present analytics in the view
-	Mood
+
+	Mood   // !!!!! is this right ??????
 	.find({ "feel": 1 })
 	// ok, this is not clear...
 	.exec().then(function(data) {

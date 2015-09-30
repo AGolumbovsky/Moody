@@ -53,11 +53,12 @@
 		<br>
 		<!-- this will do the same as at the startup -->
 		<button ng-click="loadMoos()">Your Moodiness</button>
-		<div> {{stuff}} </div>
-		<div> {{moodAnswer}} </div>
+		
 		<div ng-repeat="moo in moos">
+
+			<!-- remove the logic from the view after test drive -->
 			
-			{{ moo.hour }} and {{ moo.feel }}
+			{{ moo.hour === 7 ? "seven ": " not seven" }} hour and you feel {{ moo.feel }}  on {{ moo.weekday }}
 
 		</div>
         

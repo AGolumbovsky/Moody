@@ -50,9 +50,7 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 		mainSvc.getMoods()
 		.then(function(data){
 			console.log(data);
-			$scope.moos = data; // put this back if the plan doesn't work
-		
-
+			$scope.moos = data;
 		});
 
 		

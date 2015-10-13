@@ -57,6 +57,19 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 
 	})(); // added IIFE to load on startup
 
+	$scope.clearMoos = function() {
+
+		console.log("erase memories");
+
+		mainSvc.clearMoods()
+		.then(function(data) {
+			console.log("nada aqui");
+			$scope.moos = data;
+		});
+	};
+
+	
+
 
 
 });

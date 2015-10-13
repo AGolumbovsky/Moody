@@ -52,13 +52,24 @@
 		<h2>See how you do</h2>
 		<br>
 		<!-- this will do the same as at the startup -->
-		<button ng-click="loadMoos()">Your Moodiness</button>
+
+
+		<!-- <button ng-click="loadMoos()">Your Moodiness</button> -->
+
+		<div class="btn-group btn-group-lg" role="group" aria-label="...">
+
+			<button ng-click="loadMoos()">Your Moodiness</button>
+
+			<button class="btn-danger" ng-click="clearMoos()">Forget all</button>
+		</div>
+
+
 		
 		<div ng-repeat="moo in moos">
 
 			<!-- remove the logic from the view after test drive -->
 			
-			{{ moo.hour === 7 ? "seven ": " not seven" }} hour and you feel {{ moo.feel }}  on {{ moo.weekday }}
+			{{ moo.hour === 7 ? "seven-ish": " not seven-ish" }} hour and you feel {{ moo.feel }}  on {{ moo.weekday }}
 
 		</div>
         

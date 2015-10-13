@@ -2,6 +2,7 @@ var app = angular.module('moody');
 
 app.service('mainSvc', function($http, $q) {
 
+	// posts the current mood to the db
 	this.postMood = function(moo) {
 
 		console.log("postMood is at your main Service")
@@ -20,6 +21,7 @@ app.service('mainSvc', function($http, $q) {
 		return dfd.promise;
 	};
 
+	// retrieves all moods (for the user) from the db
 	this.getMoods = function() {
 
 		console.log("getMoods is at your main Service");
@@ -35,26 +37,29 @@ app.service('mainSvc', function($http, $q) {
 		});
 
 		console.log("getMoods did it");
+
 		return dfd.promise; 
 	};
-	// try to mess with:
 
-	/*
-	function asyncGreet(name) {
-  // perform some asynchronous operation, resolve or reject the promise when appropriate.
-  return $q(function(resolve, reject) {
-    setTimeout(function() {
-      if (okToGreet(name)) {
-        resolve('Hello, ' + name + '!');
-      } else {
-        reject('Greeting ' + name + ' is not allowed.');
-      }
-    }, 1000);
-  });
-}
+	// deletes all the mood records (for the user) from the db
+	this.clearMoods = function() {
+		console.log("clearMoods from mainSvc..");
 
+		var dfd = $q.defer;
 
-*/
+		$http({
+			method: 'DELETE', 
+			url: 'api/moods',
+		})
+		.then(function(res) {
+			dfd.resolve(res.data);
+		});
+
+			console.log("clearMoods did it");
+
+			return dfd.promise;
+
+	};
 
 
 });

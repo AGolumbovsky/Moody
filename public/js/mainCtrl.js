@@ -43,7 +43,7 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 
 	// load stats from db (unrefined for now) 
 
-	($scope.loadMoos = function() {
+	$scope.loadMoos = function() {
 
 		console.log("moo starts");
 		// this is where I had a problem for 2 months of trying to figure it out on my own... sometimes you just have to ask for help. took < 10 min
@@ -55,7 +55,7 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 
 		
 
-	})(); // added IIFE to load on startup
+	};
 
 	$scope.clearMoos = function() {
 

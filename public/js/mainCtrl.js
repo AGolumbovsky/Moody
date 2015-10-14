@@ -57,17 +57,19 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 
 	};
 
-	$scope.clearMoos = function() {
+	$scope.deleteMoos = function() {
 
 		console.log("erase memories");
 
-		mainSvc.clearMoods()
+		mainSvc.deleteMoods()
 		.then(function(data) {
 			console.log("nada aqui");
 			$scope.moos = data;
 		});
 	};
-
+	$scope.clearView = function() {
+		$scope.moos = {};
+	}
 	
 
 

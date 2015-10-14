@@ -42,7 +42,7 @@ app.service('mainSvc', function($http, $q) {
 	};
 
 	// deletes all the mood records (for the user) from the db
-	this.clearMoods = function() {
+	this.deleteMoods = function() {
 		console.log("clearMoods from mainSvc..");
 
 		var dfd = $q.defer;
@@ -60,6 +60,7 @@ app.service('mainSvc', function($http, $q) {
 			return dfd.promise;
 
 	};
+
 
 
 });

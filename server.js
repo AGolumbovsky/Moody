@@ -50,8 +50,39 @@ app.get('/api/moods', function(req, res) {
 	
 });
 
+//my code for deleting all records from db
+// not working 
+app.delete('api/moods/all', function(req, res) {
+	Mood.remove({}), function(err) {
+		console.log("I just can't forget..");
+	}
+	res.status(200).end();
+});
+
+
 
 //listen on port
 app.listen(port, function() {
 	console.log('being all moody on port ', port);
 });
+
+// // ############# not my code, reference #####
+
+// app.delete('/api/places/:placeId', requireAuth, function(req, res) {
+// 	Place.remove({ _id: req.params.placeId }, function(err) {
+// 		if (err) {
+// 			console.log("can't delete place", err);
+// 		}
+// 		res.status(200).end();
+// 	});
+// });
+
+// app.delete('/api/users/:userId', requireAuth, function(req, res) {
+// 	User.remove({ _id: req.params.userId }, function(err) {
+// 		if (err) {
+// 			console.log("can't delete user", err);
+// 		}
+// 		res.status(200).end();
+// 	});
+// });
+

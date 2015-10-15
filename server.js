@@ -51,7 +51,6 @@ app.get('/api/moods', function(req, res) {
 });
 
 //my code for deleting all records from db
-// not working 
 
 app.delete('/api/moods', function(req, res) {
 

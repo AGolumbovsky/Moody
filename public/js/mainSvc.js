@@ -42,22 +42,24 @@ app.service('mainSvc', function($http, $q) {
 	};
 
 	// deletes all the mood records (for the user) from the db
+	// ********  figure out why couldn't make it work with $q :-/
+
 	this.deleteMoods = function() {
-		console.log("clearMoods from mainSvc..");
+		console.log("deleteMoods from mainSvc..");
 
-		var dfd = $q.defer;
+		//var dfd = $q.defer;
 
-		$http({
+		return $http({
 			method: 'DELETE', 
 			url: 'api/moods'
 		})
-		.then(function(res) {
-			dfd.resolve(res.data);
-		});
+		// .then(function(res) {
+		// 	dfd.resolve(res.data);
+		// });
 
-			console.log("clearMoods did it");
+		console.log("deleteMoods did it");
 
-			return dfd.promise;
+		//return dfd.promise;
 
 	};
 

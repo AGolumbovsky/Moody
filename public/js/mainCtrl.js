@@ -59,6 +59,7 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 
 	};
 
+	// deletes all the moods from the db
 	$scope.deleteMoos = function() {
 
 		console.log("erase memories");
@@ -68,7 +69,10 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 			console.log("nada aqui");
 			$scope.moos = data;
 		});
+		$scope.loadMoos();
 	};
+
+	//clears the view, doesn't touch the data
 	$scope.clearView = function() {
 		$scope.moos = {};
 	}

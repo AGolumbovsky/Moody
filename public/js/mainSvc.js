@@ -49,7 +49,7 @@ app.service('mainSvc', function($http, $q) {
 
 		$http({
 			method: 'DELETE', 
-			url: 'api/moods',
+			url: 'api/moods'
 		})
 		.then(function(res) {
 			dfd.resolve(res.data);

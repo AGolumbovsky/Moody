@@ -24,7 +24,9 @@ var db = mongoose.connection;
 
 //post your mood
 app.post('/api/moods', function(req, res) {
-	console.log("server got a moody POST request") 
+
+	console.log("server got a moody POST request");
+
 	var mood = new Mood(req.body);
 	mood.save(function(err, moo) {
 		if (err) {
@@ -36,13 +38,11 @@ app.post('/api/moods', function(req, res) {
 
 //get your moods
 app.get('/api/moods', function(req, res) {
+
 	console.log("server got a moody GET request"); 
 
-	// !!!! in test right now !!!
-	// !!! will have logic to present analytics in the view
-
 	Mood   // !!!!! is this right ??????
-	.find({ "feel": 1 })
+	.find({})
 	// ok, this is not clear...
 	.exec().then(function(data) {
 		return res.json(data)
@@ -52,19 +52,30 @@ app.get('/api/moods', function(req, res) {
 
 //my code for deleting all records from db
 // not working 
-app.delete('api/moods/all', function(req, res) {
-	Mood.remove({}), function(err) {
-		console.log("I just can't forget..");
-	}
+
+app.delete('/api/moods', function(req, res) {
+
+	console.log("server got DELETE request");
+
+	Mood.remove({}, function(err) {
+		console.log("I just can't..");
+	});
 	res.status(200).end();
 });
-
 
 
 //listen on port
 app.listen(port, function() {
 	console.log('being all moody on port ', port);
 });
+
+
+
+
+
+
+
+
 
 // // ############# not my code, reference #####
 

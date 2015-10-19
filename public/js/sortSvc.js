@@ -3,19 +3,21 @@ var app = angular.service('moody');
 app.service('sortSvc', function(mainSvc) {
 
 // what do you want it to do, man?
-this.byWeekday = function(rawData) {
+this.byWeekday = function() {
 
-	var displayWeekday = '';
+	// var displayWeekday = '';
 
 
 	// find the best way to display the days returned from server
 	// ***********!!!!!!!!!!!!!!!!!!!
-	if (rawData.weekday === 0) displayWeekday = "Sunday";
-	else if (rawData.weekday === 1) displayWeekday = "Monday";
-	// and so on...
+	// if ($scope.moo.weekday === 0) $scope.moo.weekday = "Sunday";
+	// else if ($scope.moo.weekday === 1) $scope.moo.weekday = "Monday";
+	// //and so on for all others...
+	// else $scope.moo.weekday = "zavtra";
 
 }
 
 
 
 });
+

@@ -54,7 +54,6 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 			console.log(data);
 			$scope.moos = data;
 		});
-
 		
 
 	};

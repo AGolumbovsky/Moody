@@ -7,3 +7,11 @@ body {
      width: 800px;
      margin: 0 auto;
 }
+
+.pokerFace {
+	background-image: url(pics/pokerFace.jpg);
+	width: 300px;
+	height: 300px;
+	background-repeat: no-repeat;
+	margin: auto;
+}

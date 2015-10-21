@@ -24,8 +24,6 @@ app.service('mainSvc', function($http, $q) {
 	// retrieves all moods (for the user) from the db
 	this.getMoods = function() {
 
-		console.log("getMoods is at your main Service");
-
 		var dfd = $q.defer();
 
 		$http({

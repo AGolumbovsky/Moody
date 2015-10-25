@@ -1,11 +1,11 @@
 var app = angular.module('moody');
 
-app.controller('weekdaysCtrl', ['weekdaysSvc', function($scope, $q, weekdaysSvc) {
+app.controller('weekdaysCtrl', function($scope, $q, weekdaysSvc) {
 
-	$scope.monday = function() {
+	$scope.showMonday = function() {
 
-		console.log("here's to Mondays!");
+		console.log("weekdaysCtrl Monday!");
 
 		weekdaysSvc.sortMonday();
 	};
-}]);
+});

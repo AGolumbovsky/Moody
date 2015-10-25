@@ -52,16 +52,16 @@
 
 			<button class="btn-warning" ng-click="clearView()">Clear !</button>
 
-			<button class="btn-danger" ng-click="deleteMoos()">Forget all</button>
+			<button class="btn-danger" ng-click="deleteMoos()" disabled label="Don't even try to forget it...">Forget all</button>
 		</div>
 		<br><br>
 
 	<!-- Bootstrap button group for each day of the week -->
 	<!-- make the size of the buttons the same using @media and replace -->
 
-	<div class="container-fluid"  ng-controller="weekdaysCtrl">
+	<div class="container-fluid">
 		<div class="row">
-    		<button type="button" class="btn btn-default" style="color: #000000" ng-click="monday()">Mon</button>
+    		<button type="button" class="btn btn-default" style="color: #000000" ng-click="showMonday()">Mon</button>
     		<button type="button" class="btn btn-default" style="color: #660000">Tue</button>
     		<button type="button" class="btn btn-default" style="color: #0000cc">Wed</button>
     		<button type="button" class="btn btn-default" style="color: #99ff99">Thu</button>

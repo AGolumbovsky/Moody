@@ -1,6 +1,6 @@
 var app = angular.module('moody');
 
-app.controller('mainCtrl', function($scope, mainSvc) {
+app.controller('mainCtrl', function($scope, mainSvc, weekdaysSvc) {
 	
 	$scope.moos = {}; 
 	
@@ -74,7 +74,20 @@ app.controller('mainCtrl', function($scope, mainSvc) {
 	//clears the view, doesn't touch the data
 	$scope.clearView = function() {
 		$scope.moos = {};
-	}
+	};
+
+
+	// separate into own file when works
+	//--------separate------------------
+
+	$scope.showMonday = function() {
+
+		console.log("showMonday works!");
+
+		weekdaysSvc.sortMonday();
+
+		$scope.mondayAvg = weekdaysSvc.avg;
+	};
 	
 
 

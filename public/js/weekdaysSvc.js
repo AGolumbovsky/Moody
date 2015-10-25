@@ -2,76 +2,60 @@ var app = angular.module('moody');
 
 app.service('weekdaysSvc', function(mainSvc) {
 
+	//show number index for all Mondays(range from -1 to 1)
 	this.sortMonday = function() {
 
-		//show number index for all Mondays(range from -1 to 1)
+		console.log("weekdaysSvc is not dead")
 
-		//test data obj
-		// var data = 	[
-
-		//   {
-		//     "_id": "562415ddd624c1782d3a8fcc",
-		//     "feel": 1,
-		//     "hour": 14,
-		//     "weekday": "0",
-		//     "__v": 0
-		//   },
-		//   {
-		//     "_id": "562415ded624c1782d3a8fcd",
-		//     "feel": 0,
-		//     "hour": 14,
-		//     "weekday": "0",
-		//     "__v": 0
-		//   },
-		//   {
-		//     "_id": "562415e0d624c1782d3a8fce",
-		//     "feel": 1,
-		//     "hour": 14,
-		//     "weekday": "0",
-		//     "__v": 0
-		//   },
-		//   {
-		//     "_id": "562415e1d624c1782d3a8fcf",
-		//     "feel": 0,
-		//     "hour": 14,
-		//     "weekday": "0",
-		//     "__v": 0
-		//   },
-		//   {
-		//     "_id": "562415e2d624c1782d3a8fd0",
-		//     "feel": 1,
-		//     "hour": 14,
-		//     "weekday": "0",
-		//     "__v": 0
-		//   }
-		// ];
-
-		mainSvc.getMoods()
-		.then(function(data) {
-			console.log(data);
-			grins = data;
-		});
-
-
-
-		//var grinArr = [];
+		
+		var gotGrins = [];
+		var grinArr = [];
 		var grinIndex = 0;
 		var sum = 0;
+		
+		// getting the mood objects from the db thru mainSvc
+		mainSvc.getMoods()
+		.then(function(got) {
+			console.log(got);
+			gotGrins = got;
 
-		for(mood in data) {
+		// make sure gotGrins is the data;	
+		console.log(gotGrins[0]['feel']); // test
 
-		grinArr.push(mood["feel"]);
+		
+		
+		// push just the 'feel' from each mood into grinArr
+		// if the day is Monday
+		for(var mood in gotGrins) {
 
-		};
+			//if the weekday is Monday
+			if (gotGrins[mood]['weekday'] == 0) {
 
-		for(var i=0; i<grinArr.length; i++) {
-			sum =+ grinArr[i];
-		};
+				grinArr.push(gotGrins[mood]['feel']);
 
-		grinIndex = sum / grinArr.length;
+			}
 
-		return grinIndex;
+		}; // working :-)
 
+		console.log(grinArr);
+
+		// find the average number for all moods
+	
+		var avg = grinArr.reduce(function(prev, curr) {
+			return prev + curr;
+		}) / grinArr.length;
+		console.log(avg + " is the droid you're looking for!!!!!")
+
+	
+
+
+
+		console.log(grinArr.length + " is arr length");
+		console.log(sum + " is the sum");
+		console.log(grinArr + " is the grinArr");
+		console.log(grinIndex + " is the grin index")
+
+		});
 	};
 
 

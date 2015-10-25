@@ -84,9 +84,10 @@ app.controller('mainCtrl', function($scope, mainSvc, weekdaysSvc) {
 
 		console.log("showMonday works!");
 
-		weekdaysSvc.sortMonday();
+		$scope.avgMon = weekdaysSvc.sortMonday();
+		
+		console.log($scope.avgMon + " Leopold, podliy trus..."); //logs 0, not what i want
 
-		$scope.mondayAvg = weekdaysSvc.avg;
 	};
 	
 

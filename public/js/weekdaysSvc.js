@@ -10,9 +10,8 @@ app.service('weekdaysSvc', function(mainSvc) {
 		
 		var gotGrins = [];
 		var grinArr = [];
-		var grinIndex = 0;
-		var sum = 0;
-		
+		var averageMonday = 0;
+				
 		// getting the mood objects from the db thru mainSvc
 		mainSvc.getMoods()
 		.then(function(got) {
@@ -41,23 +40,18 @@ app.service('weekdaysSvc', function(mainSvc) {
 
 		// find the average number for all moods
 	
-		var avg = grinArr.reduce(function(prev, curr) {
-			return prev + curr;
-		}) / grinArr.length;
-		console.log(avg + " is the droid you're looking for!!!!!")
-
-	
-
-
-
-		console.log(grinArr.length + " is arr length");
-		console.log(sum + " is the sum");
-		console.log(grinArr + " is the grinArr");
-		console.log(grinIndex + " is the grin index")
+		var averageMood = grinArr.reduce(function(prev, curr) {
+				return prev + curr;
+			}) / grinArr.length;	
+		console.log(averageMood + " is the average m..");
+		
+		averageMonday = averageMood;
+		console.log(averageMonday + " is the average for monday");
 
 		});
+	return averageMonday;
+
 	};
 
 
-
-} )
+})

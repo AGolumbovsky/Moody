@@ -16,3 +16,11 @@ body {
 	margin: auto;
 }
 
+/* make responsive once working properly */
+#drawGrin {
+	border: solid red 1px;
+	width: 200px;
+	height: 80px;
+	margin-top: 120px;
+}
+

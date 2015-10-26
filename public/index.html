@@ -46,6 +46,12 @@
 		</div>
 
 
+		<!-- Mess with the canvas put inside the mugshot when figured-->
+
+		
+		<br>
+
+
 		<div class="btn-group btn-group-lg" role="group" aria-label="...">
 
 			<button class="btn-primary" ng-click="loadMoos()">Your Moodiness</button>
@@ -75,7 +81,16 @@
 		<!-- use this div with a pic as background -->
 		<div class="pokerFace">
 			
-				<canvas id="drawGrin"></canvas>
+				<canvas id="drawGrin">
+			
+
+				</canvas>
+
+				<script>
+					var canvas = document.getElementById('drawGrin');
+					var cnx = canvas.getContext('2D');
+
+				</script>
 			
 		</div>
 		

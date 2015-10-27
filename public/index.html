@@ -58,7 +58,7 @@
 	<!-- Bootstrap button group for each day of the week -->
 	<!-- make the size of the buttons the same using @media and replace -->
 
-	<div class="container-fluid">
+	<div class="container-fluid" ng-controller="weekdaysCtrl">
 		<div class="row">
     		<button type="button" class="btn btn-default" style="color: #000000" ng-click="showMonday()">Mon</button>
     		<button type="button" class="btn btn-default" style="color: #660000">Tue</button>
@@ -83,7 +83,7 @@
 			
 		</div>
 		
-		<div ng-repeat="moo in moos">
+		<div ng-repeat="moo in moos | orderBy : moo : true">
 
 			<!-- remove the logic from the view after test drive -->
 			

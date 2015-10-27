@@ -34,7 +34,7 @@ app.service('mainSvc', function($http, $q) {
 			dfd.resolve(res.data);
 		});
 
-		console.log("getMoods did it");
+		console.log("getMoods in main Svc");
 
 		return dfd.promise; 
 	};

@@ -2,7 +2,7 @@ var app = angular.module('moody');
 
 app.service('weekdaysSvc', function(mainSvc) {
 
-	//show number index for all Mondays(range from -1 to 1)
+	//show number index for all Mondays(range from 0 to 1)
 	this.sortMonday = function() {
 
 		console.log("weekdaysSvc is not dead")
@@ -17,9 +17,10 @@ app.service('weekdaysSvc', function(mainSvc) {
 		.then(function(got) {
 			console.log(got);
 			gotGrins = got;
+			console.log(gotGrins + " logged weekdaySvc gotGrins")
 
 		// make sure gotGrins is the data;	
-		console.log(gotGrins[0]['feel']); // test
+		console.log(gotGrins[0]['feel'] + " sample gotGrins"); // test
 
 		
 		
@@ -36,7 +37,7 @@ app.service('weekdaysSvc', function(mainSvc) {
 
 		}; // working :-)
 
-		console.log(grinArr);
+		console.log(grinArr.length);
 
 		// find the average number for all moods
 	
@@ -44,6 +45,7 @@ app.service('weekdaysSvc', function(mainSvc) {
 				return prev + curr;
 			}) / grinArr.length;	
 		console.log(averageMood + " is the average m..");
+
 		
 		averageMonday = averageMood;
 		console.log(averageMonday + " is the average for monday");

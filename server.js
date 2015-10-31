@@ -68,7 +68,9 @@ app.delete('/api/moods', function(req, res) {
 	console.log('being all moody on port ', port);
 });*/
 
-app.listen(process.env.EXPRESS_PORT || 8888);
+app.listen(process.env.EXPRESS_PORT || 8888, function() {
+	console.log("being all moody and all...");
+});
 
 
 

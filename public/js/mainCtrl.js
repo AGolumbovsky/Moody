@@ -77,6 +77,17 @@ app.controller('mainCtrl', function($scope, mainSvc, weekdaysSvc) {
 	$scope.clearView = function() {
 		$scope.moos = {};
 	};
+
+	// "Mon" button
+	$scope.showMonday = function() {
+
+		console.log("showMonday works!");
+
+		$scope.avgMon = weekdaysSvc.sortMonday();
+		
+		console.log($scope.avgMon + " Leopold, podliy trus..."); //logs 0, not what i want
+
+	};
 	
 
 

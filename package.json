@@ -1,5 +1,5 @@
 {
-  "name": "moody",
+  "name": "Moody",
   "version": "1.0.0",
   "description": "tells you when you are likely to feel sad or happy based on the time and day of the week",
   "main": "server.js",

@@ -48,11 +48,15 @@ app.controller('mainCtrl', function($scope, mainSvc, weekdaysSvc) {
 	$scope.loadMoos = function() {
 
 		console.log("moo started");
-		// this is where I had a problem for 2 months of trying to figure it out on my own... sometimes you just have to ask for help. took < 10 min
+		// this is where I had a problem for 2 months on my own...
 		mainSvc.getMoods()
 		.then(function(data){
 			console.log(data + " \n is the data from mainSvc in mainCtrl");
 			$scope.moos = data;
+            
+        // let me try  something here
+        
+        
 		});
 
 		console.log("moo finished")

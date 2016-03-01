@@ -69,7 +69,7 @@ app.delete('/api/moods', function(req, res) {
 });*/
 
 app.listen(process.env.EXPRESS_PORT || 8888, function() {
-	console.log("being all moody and all...");
+	console.log(port + " shades of moody..");
 });
 
 
